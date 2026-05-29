@@ -3,85 +3,161 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohan-codeer | Project Portfolio</title>
+    <title>Mohan-codeer | Dark Portfolio</title>
     <style>
+        :root {
+            --bg-color: #121212;
+            --card-bg: #1e1e1e;
+            --text-primary: #e0e0e0;
+            --text-secondary: #b0b0b0;
+            --accent-color: #00d4ff;
+            --accent-hover: #0099cc;
+            --border-color: #333;
+        }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-primary);
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 20px;
-            background-color: #f4f7f6;
+            background-color: var(--bg-color);
         }
         header {
             text-align: center;
             margin-bottom: 50px;
-            border-bottom: 2px solid #007bff;
+            border-bottom: 2px solid var(--accent-color);
             padding-bottom: 20px;
         }
         h1 {
-            color: #2c3e50;
+            color: var(--accent-color);
             margin-bottom: 10px;
+            font-size: 2.5em;
         }
         .intro {
             font-size: 1.1em;
-            color: #666;
+            color: var(--text-secondary);
         }
         .repo-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 20px;
+            gap: 25px;
+            margin-bottom: 50px;
         }
         .repo-card {
-            background: #fff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.2s, box-shadow 0.2s;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             display: flex;
             flex-direction: column;
-            border-left: 5px solid #007bff;
+            border: 1px solid var(--border-color);
         }
         .repo-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            border-color: var(--accent-color);
         }
         .repo-card h3 {
             margin-top: 0;
-            color: #007bff;
+            color: var(--accent-color);
         }
         .repo-card p {
             font-size: 0.95em;
-            color: #555;
+            color: var(--text-secondary);
             flex-grow: 1;
         }
         .repo-card .meta {
             font-size: 0.85em;
-            color: #888;
+            color: var(--text-secondary);
             margin-top: 15px;
-        }
-        .repo-card a {
-            text-decoration: none;
-            color: inherit;
+            font-style: italic;
         }
         .btn {
             display: inline-block;
             margin-top: 15px;
-            padding: 8px 16px;
-            background: #007bff;
-            color: #fff;
-            border-radius: 4px;
+            padding: 10px 20px;
+            background: var(--accent-color);
+            color: #000;
+            border-radius: 6px;
             text-align: center;
             font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s;
         }
         .btn:hover {
-            background: #0056b3;
+            background: var(--accent-hover);
         }
+
+        /* FAQ Section */
+        .section-title {
+            text-align: center;
+            margin: 60px 0 30px;
+            color: var(--accent-color);
+            font-size: 2em;
+        }
+        .faq-container {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 50px;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 15px;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+        .faq-answer {
+            color: var(--text-secondary);
+            font-size: 0.95em;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            text-align: center;
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            border: 1px solid var(--border-color);
+        }
+        .contact-info {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .contact-info a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .personal-port-link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 1.1em;
+            color: var(--accent-color);
+            text-decoration: none;
+            border: 1px solid var(--accent-color);
+            padding: 10px 25px;
+            border-radius: 30px;
+            transition: all 0.3s;
+        }
+        .personal-port-link:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+
         footer {
             text-align: center;
             margin-top: 60px;
-            color: #888;
+            color: var(--text-secondary);
             font-size: 0.9em;
         }
     </style>
@@ -89,7 +165,7 @@
 <body>
     <header>
         <h1>Mohan-codeer</h1>
-        <p class="intro">General Purpose Project Portfolio</p>
+        <p class="intro">General Purpose Project Portfolio & Solutions</p>
     </header>
 
     <div class="repo-grid">
@@ -97,72 +173,67 @@
             <h3>Forge-Builder</h3>
             <p>A drag-and-drop website builder that runs entirely in a single HTML file — no installs, no sign-up, no server required.</p>
             <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/Forge-Builder" class="btn" target="_blank">View on GitHub</a>
+            <a href="https://github.com/Mohan-codeer/Forge-Builder" class="btn" target="_blank">View Project</a>
         </div>
         <div class="repo-card">
             <h3>ProbeThat</h3>
-            <p>ProbeThat is a website with lets any user use their GROQ API KEY to scan their own website for vulnerability.</p>
+            <p>Advanced security scanning tool utilizing GROQ API to identify vulnerabilities in web applications.</p>
             <div class="meta">Language: Python</div>
-            <a href="https://github.com/Mohan-codeer/ProbeThat" class="btn" target="_blank">View on GitHub</a>
+            <a href="https://github.com/Mohan-codeer/ProbeThat" class="btn" target="_blank">View Project</a>
         </div>
         <div class="repo-card">
             <h3>Network-Knowledge-Quiz</h3>
-            <p>A quiz application focusing on networking fundamentals.</p>
+            <p>Interactive platform for testing and improving networking fundamentals knowledge.</p>
             <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/Network-Knowledge-Quiz" class="btn" target="_blank">View on GitHub</a>
+            <a href="https://github.com/Mohan-codeer/Network-Knowledge-Quiz" class="btn" target="_blank">View Project</a>
         </div>
         <div class="repo-card">
             <h3>MyFlashcards</h3>
-            <p>A simple and effective flashcard application for studying.</p>
+            <p>Productivity tool for students and learners to create and manage digital study cards.</p>
             <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/MyFlashcards" class="btn" target="_blank">View on GitHub</a>
-        </div>
-        <div class="repo-card">
-            <h3>GK-flashcards</h3>
-            <p>General Knowledge flashcards application.</p>
-            <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/GK-flashcards" class="btn" target="_blank">View on GitHub</a>
+            <a href="https://github.com/Mohan-codeer/MyFlashcards" class="btn" target="_blank">View Project</a>
         </div>
         <div class="repo-card">
             <h3>Intern-SailsSoftware</h3>
-            <p>Projects and tasks completed during internship at Sails Software.</p>
+            <p>Comprehensive collection of enterprise-level tasks and Python implementations during my tenure at Sails Software.</p>
             <div class="meta">Language: Python</div>
-            <a href="https://github.com/Mohan-codeer/Intern-SailsSoftware" class="btn" target="_blank">View on GitHub</a>
+            <a href="https://github.com/Mohan-codeer/Intern-SailsSoftware" class="btn" target="_blank">View Project</a>
         </div>
         <div class="repo-card">
             <h3>crewai-groq-demo</h3>
-            <p>Learning project for CrewAI and Groq integration.</p>
+            <p>Experimental agentic workflows using CrewAI and high-performance LLMs via Groq.</p>
             <div class="meta">Language: Python</div>
-            <a href="https://github.com/Mohan-codeer/crewai-groq-demo" class="btn" target="_blank">View on GitHub</a>
-        </div>
-        <div class="repo-card">
-            <h3>F5-EXPERT-PROTOCOL</h3>
-            <p>Protocol related project documentation and implementation.</p>
-            <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/F5-EXPERT-PROTOCOL" class="btn" target="_blank">View on GitHub</a>
-        </div>
-        <div class="repo-card">
-            <h3>cv</h3>
-            <p>Curriculum Vitae / Personal profile page.</p>
-            <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/cv" class="btn" target="_blank">View on GitHub</a>
-        </div>
-        <div class="repo-card">
-            <h3>my-website.github.io</h3>
-            <p>Official personal website and portfolio.</p>
-            <div class="meta">Language: HTML</div>
-            <a href="https://github.com/Mohan-codeer/my-website.github.io" class="btn" target="_blank">View on GitHub</a>
-        </div>
-        <div class="repo-card">
-            <h3>St. Francis School Projects</h3>
-            <p>A collection of websites and applications built for St. Francis School.</p>
-            <div class="meta">Focus: Education/Web</div>
-            <a href="https://github.com/Mohan-codeer/st-francis-school-website" class="btn" target="_blank">View Collection</a>
+            <a href="https://github.com/Mohan-codeer/crewai-groq-demo" class="btn" target="_blank">View Project</a>
         </div>
     </div>
 
+    <h2 class="section-title">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">What is the focus of these projects?</div>
+            <div class="faq-answer">Most projects focus on web automation, security tools, and educational applications using HTML/JS and Python.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Can I use these tools for free?</div>
+            <div class="faq-answer">Yes, most of these are open-source and available on GitHub for community use and improvement.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">Are you available for freelance work?</div>
+            <div class="faq-answer">Absolutely! Check my contact information below for any inquiries regarding development projects.</div>
+        </div>
+    </div>
+
+    <h2 class="section-title">Get In Touch</h2>
+    <div class="contact-section">
+        <div class="contact-info">
+            Phone: <a href="tel:+919666566624">+91 9666566624</a> (India)
+        </div>
+        <p>I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.</p>
+        <a href="https://mohan-codeer.github.io/" class="personal-port-link" target="_blank">Visit My Personal Portfolio</a>
+    </div>
+
     <footer>
-        <p>&copy; 2026 Mohan-codeer. Generated by Gemini CLI.</p>
+        <p>&copy; 2026 Mohan-codeer. Designed in Dark Mode with Gemini CLI.</p>
     </footer>
 </body>
 </html>
